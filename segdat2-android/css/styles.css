@@ -1,0 +1,12 @@
+.slide h1 {
+  font-size: 3em;
+}
+#titulo h3 {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.deck-container .deck-prev-link, .deck-container .deck-next-link {
+  background: #888;
+}
