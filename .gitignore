@@ -1,0 +1,16 @@
+# SVN files
+.svn/
+
+# SASS files
+*.sass-cache
+
+# SublimeText files
+*.sublime-project
+*.sublime-workspace
+
+# vim files
+.*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
