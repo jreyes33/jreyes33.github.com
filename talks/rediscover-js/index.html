@@ -1,0 +1,567 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Rediscover JavaScript</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Ubuntu+Mono:400,700">
+  <link rel="stylesheet" href="styles/439fa99e.main.css">
+  <script src="scripts/vendor/f7f27360.modernizr.js"></script>
+</head>
+<body class="deck-container">
+
+  <section class="slide" id="cover">
+    <h1>Rediscover JavaScript</h1>
+  </section>
+
+  <section class="slide" id="origin">
+    <h2>Brief History</h2>
+    <h3>Origin</h3>
+    <ul>
+      <li class="slide">Created in 1995 by Brendan Eich</li>
+      <li class="slide">for Netscape Navigator 2</li>
+      <li class="slide">in just 10 days</li>
+    </ul>
+  </section>
+
+  <section class="slide" id="names">
+    <h2>Brief History</h2>
+    <h3>Names</h3>
+    <ul>
+      <li class="slide">Mocha (1995)</li>
+      <li class="slide">LiveScript (1995, early rename)</li>
+      <li class="slide">JavaScript (1995, marketing)</li>
+      <li class="slide">JScript (1996, trademark issues)</li>
+      <li class="slide">ECMAScript (1997, standard)</li>
+    </ul>
+  </section>
+
+  <section class="slide" id="today">
+    <h2>Today</h2>
+    <h3>Versions</h3>
+    <ul>
+      <li class="slide">JavaScript 1.8.* (<a href="http://es5.github.io/">ECMAScript 5.1</a>)</li>
+      <li class="slide">JavaScript 2.0 (<a href="http://wiki.ecmascript.org/doku.php?id=harmony:harmony">ES6 Harmony</a>) in development</li>
+    </ul>
+    <h3>Everywhere</h3>
+    <ul>
+      <li class="slide">Every modern browser</li>
+      <li class="slide">Server side (most notably <a href="http://nodejs.org/">Node.js</a>)</li>
+      <li class="slide">Desktop (<a href="https://live.gnome.org/GnomeShell/Development">GNOME Shell</a>, <a href="http://msdn.microsoft.com/en-us/library/windows/apps/br211385.aspx">Windows 8</a>)</li>
+      <li class="slide">Mobile (<a href="http://phonegap.com/">Phonegap</a>, <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS">Firefox OS</a>)</li>
+    </ul>
+  </section>
+
+  <section class="slide" id="style-1">
+    <h2>Coding Style Guide</h2>
+    <blockquote>
+      <p>
+        Consistent code, even when written by a team, should look like one person wrote it.
+      </p>
+      <p><cite>
+        <a href="http://addyosmani.com/blog/javascript-style-guides-and-beautifiers/">Addy Osmani</a>
+      </cite></p>
+    </blockquote>
+  </section>
+
+  <section class="slide" id="style-2">
+    <h2>Coding Style Guide</h2>
+    <p>
+      Based on <a href="https://github.com/rwldrn/idiomatic.js/#readme">idiomatic.js</a>
+      but with less whitespace inside parenthesis.
+    </p>
+    <ul>
+      <li class="slide"><strong>Always</strong> use <strong>2 spaces</strong> for indentation (no tabs).</li>
+      <li class="slide">Never leave trailing whitespace.</li>
+      <li class="slide">Leave one blank line at the end of the file.</li>
+      <li class="slide">Keep lines under 80 characters long.</li>
+      <li class="slide"><strong>Never</strong> mix quotation marks in a project. Prefer single quotes, but <strong>be consistent</strong>.</li>
+      <li class="slide">Prefer <kbd>===</kbd> over <kbd>==</kbd> for comparisons (<kbd>===</kbd> does not coerce types).</li>
+      <li class="slide">Don't rely on automatic semicolon insertion. Use semicolons after every simple statement and don't put more than one statement per line.</li>
+    </ul>
+  </section>
+
+  <section class="slide" id="style-3">
+    <h2>Coding Style Guide</h2>
+    <div class="code-wrapper">
+      <label>DON'T:</label>
+      <textarea class="code" mode="javascript" theme="cobalt">
+if(condition) doSomething();
+else doSomethingElse();
+
+while(condition) iterating++;
+
+for(var i=0;i&lt;100;i++) someIterativeFn();
+      </textarea>
+    </div>
+
+    <div class="code-wrapper">
+      <label>DO:</label>
+      <textarea class="code" mode="javascript" theme="neat">
+if (condition) {
+  doSomething();
+} else {
+  doSomethingElse();
+}
+
+while (condition) {
+  iterating++;
+}
+
+var i;
+for (i = 0; i &lt; 100; i++) {
+  someIterativeFn();
+}
+      </textarea>
+    </div>
+  </section>
+
+  <section class="slide" id="style-4">
+    <h2>Coding Style Guide</h2>
+    <div class="code-wrapper">
+      <label>DON'T:</label>
+      <textarea class="code" mode="javascript" theme="cobalt">
+function foo() {
+
+  // some statements here
+
+  var bar = '';
+  var qux;
+}
+      </textarea>
+    </div>
+
+    <div class="code-wrapper">
+      <label>DO use only one var statement at the top of the scope (function):</label>
+      <textarea class="code" mode="javascript" theme="neat">
+function foo() {
+  var bar = '',
+    qux;
+
+  // all statements after the variables declarations.
+}
+      </textarea>
+    </div>
+  </section>
+
+  <section class="slide" id="style-5">
+    <h2>Coding Style Guide</h2>
+    <h3>Constructor Functions</h3>
+    <div class="code-wrapper">
+      <label>DON'T:</label>
+      <textarea class="code" mode="javascript" theme="cobalt">
+function fooBar(options) {
+  this.options = options;
+}
+
+var fooBarInstance = new fooBar({ a: 'alpha' });
+
+// **Never** call a constructor without the `new` operator
+// `baz` will be `undefined` and the global namespace will be polluted
+var baz = fooBar({ a: 'alpha' });
+      </textarea>
+    </div>
+
+    <div class="code-wrapper">
+      <label>DO use UpperCamelCase to name constructor functions:</label>
+      <textarea class="code" mode="javascript" theme="neat">
+function FooBar(options) {
+  this.options = options;
+}
+
+var fooBar = new FooBar({ a: 'alpha' });
+      </textarea>
+    </div>
+  </section>
+
+  <section class="slide" id="style-6">
+    <h2>Coding Style Guide</h2>
+    <div class="code-wrapper">
+      <label>Type checking:</label>
+      <textarea class="code" mode="javascript" theme="neat">
+// String
+typeof variable === 'string'
+
+// Number:
+typeof variable === 'number'
+
+// Boolean:
+typeof variable === 'boolean'
+
+// Object:
+typeof variable === 'object'
+
+// Array:
+Array.isArray(arrayLikeObject)
+
+// Node:
+elem.nodeType === 1
+      </textarea>
+    </div>
+  </section>
+
+  <section class="slide" id="style-7">
+    <h2>Coding Style Guide</h2>
+    <div class="code-wrapper">
+      <label>Type checking:</label>
+      <textarea class="code" mode="javascript" theme="neat">
+// null:
+variable === null
+
+// null or undefined:
+variable == null
+
+// undefined (Global Variables):
+typeof variable === 'undefined'
+
+// undefined (Local Variables):
+variable === undefined
+
+//Properties:
+object.prop === undefined
+object.hasOwnProperty( prop )
+'prop' in object
+      </textarea>
+    </div>
+  </section>
+
+  <section class="slide" id="style-8">
+    <h2>Coding Style Guide</h2>
+    <h3>Naming</h3>
+    <p>
+      Always use meaningful names. An exception are commonly used names as conventions
+      (<kbd>i</kbd> with <kbd>for</kbd> loops, <kbd>e</kbd> for events in handlers, <kbd>err</kbd> for errors in <kbd>try/catch</kbd>)
+    </p>
+    <div class="code-wrapper">
+      <textarea class="code" mode="javascript" theme="neat">
+// camelCase for functions, variables and methods
+functionNamesLikeThis;
+variableNamesLikeThis;
+methodNamesLikeThis;
+
+// UpperCamelCase for constructor functions
+ConstructorNamesLikeThis;
+
+// SCREAMING_SNAKE_CASE for variables used as constants
+SYMBOLIC_CONSTANTS_LIKE_THIS;
+      </textarea>
+    </div>
+  </section>
+
+  <section class="slide" id="style-9">
+    <h2>Coding Style Guide</h2>
+    <h3>Comments</h3>
+    <ul>
+      <li class="slide">Single line above the code that is subject.</li>
+      <li class="slide">Multiline is good.</li>
+      <li class="slide">End of line comments are prohibited!</li>
+      <li class="slide">JSDoc style is good, but requires a significant time investment.</li>
+      <li class="slide">From <a href="http://javascript.crockford.com/code.html">Crockford</a>: It is important that comments be kept up-to-date. Erroneous comments can make programs even harder to read and understand.</li>
+      <li class="slide">Make comments meaningful. Focus on what is not immediately visible.</li>
+    </ul>
+  </section>
+
+  <section class="slide" id="iife-1">
+    <h2>IIFEs</h2>
+    <p>
+      <a href="http://benalman.com/news/2010/11/immediately-invoked-function-expression/">Immediately-invoked function expressions</a>
+      are a common pattern used to control variable scope and avoid polluting the global namespace.
+    </p>
+    <div class="code-wrapper">
+      <textarea class="code" mode="javascript" runnable="true" theme="neat">
+// An IIFE
+(function() {
+  // ...
+}());
+
+// Another IIFE
+(function() {
+  // ...
+})();
+
+// Roughly equivalent to
+var myScope = function() {
+  // ...
+};
+myScope();
+      </textarea>
+    </div>
+  </section>
+
+  <section class="slide" id="iife-2">
+    <h2>IIFEs</h2>
+    <p>
+      They are also useful for writing modular code and support importing globals via
+      parameters passed during the invocation.
+    </p>
+    <div class="code-wrapper">
+      <textarea class="code" mode="javascript" runnable="true" theme="neat" globals="window, jQuery">
+// Leading semicolon protects from potential issues when concatenating files
+;(function(ctx, $, undefined) {
+  // Create globals (only if necessary!)
+  ctx._myGlobalFlag = true;
+
+  // Alias outside variables (also useful for minification)
+  $('body').hide().fadeIn();
+
+  // Compare stuff to undefined (not very common)
+  console.log(ctx._somethingUndefined === undefined);
+}(window || global, jQuery));
+      </textarea>
+    </div>
+  </section>
+
+  <section class="slide" id="strict-1">
+    <h2>Strict Mode</h2>
+    <p>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode">Strict mode</a>
+      enables a stricter variant of JavaScript that prevents unsafe statements and common mistakes from being made.
+    </p>
+    <div class="code-wrapper">
+      <label for="code-strict-1-1">Without strict mode:</label>
+      <textarea class="code" id="code-strict-1-1" mode="javascript" runnable="true" theme="neat">
+;(function() {
+  var declared;
+  declared = 1;
+  undeclared = 2;
+  console.log(undeclared === window.undeclared);
+}());
+      </textarea>
+    </div>
+    <div class="code-wrapper">
+      <label for="code-strict-1-2">With strict mode (open your browser's console!):</label>
+      <textarea class="code" id="code-strict-1-2" mode="javascript" runnable="true" theme="neat">
+;(function() {
+  'use strict';
+  var declared;
+  declared = 1;
+  undeclared = 2;
+  console.log(undeclared === window.undeclared);
+}());
+      </textarea>
+    </div>
+  </section>
+
+  <section class="slide" id="strict-2">
+    <h2>Strict Mode</h2>
+    <div class="code-wrapper">
+      <label for="code-strict-2-1">Without strict mode:</label>
+      <textarea class="code" id="code-strict-2-1" mode="javascript" runnable="true" theme="neat">
+;(function() {
+  var person = {
+    firstName: 'Pedro',
+    lastName: 'Picapiedra',
+    firstName: 'Pablo'
+  };
+  console.log(person);
+}());
+      </textarea>
+    </div>
+
+    <div class="code-wrapper">
+      <label for="code-strict-2-2">With strict mode (open your browser's console!):</label>
+      <textarea class="code" id="code-strict-2-2" mode="javascript" runnable="true" theme="neat">
+;(function() {
+  'use strict';
+  var person = {
+    firstName: 'Pedro',
+    lastName: 'Picapiedra',
+    firstName: 'Pablo'
+  };
+  console.log(person);
+}());
+      </textarea>
+    </div>
+  </section>
+
+  <section class="slide" id="strict-3">
+    <h2>Strict Mode</h2>
+    <div class="code-wrapper">
+      <label for="code-strict-3-1">These all throw exceptions on strict mode:</label>
+      <textarea class="code" id="code-strict-3-1" mode="javascript" runnable="true" theme="neat">
+;(function() {
+  'use strict';
+
+  // SyntaxError: Variable name may not be eval or arguments in strict mode
+  var arguments = ['random', 'stuff'];
+  var eval = function() { return 'lol' };
+
+  // SyntaxError: Delete of an unqualified identifier in strict mode
+  var count = 10;
+  delete count;
+
+  // SyntaxError: Strict mode function may not have duplicate parameter names
+  var getFullName = function(firstName, lastName, firstName) {};
+
+  // TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed
+  // on strict mode functions or the arguments objects for calls to them
+  (function() { arguments.callee() }());
+
+  // SyntaxError: Strict mode code may not include a with statement
+  var obj = {a: 'a', b: 'b'};
+  with (obj) { console.log(b); }
+}());
+      </textarea>
+    </div>
+  </section>
+
+  <section class="slide" id="prototypal-1">
+    <h2>Prototypal Inheritance</h2>
+    <p class="slide">
+      JavaScript is an object-oriented language that uses
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain">prototypal</a>
+      <a href="http://h30499.www3.hp.com/t5/HP-Software-Developers-Blog/JavaScript-Inheritance-Revisited/ba-p/6082285">inheritance</a>.
+    </p>
+    <p class="slide">
+      From MDN:
+      <br>
+      "Each object has an internal link to another object called its <strong>prototype</strong>. That prototype object has a prototype of its own, and so on until an object is reached with <kbd>null</kbd> as its prototype. <kbd>null</kbd>, by definition, has no prototype, and acts as the final link in this prototype chain."
+    </p>
+    <div class="code-wrapper">
+      <textarea class="code" mode="javascript" runnable="true" theme="neat">
+var car = {wheels: 4};
+console.log(Object.getPrototypeOf(car));
+console.log(Object.getPrototypeOf(car) === Object.prototype);
+console.log(Object.getPrototypeOf(Object.prototype));
+      </textarea>
+    </div>
+  </section>
+
+  <section class="slide" id="prototypal-2">
+    <h2>Prototypal Inheritance</h2>
+    <p>
+      The <kbd>Object.create</kbd> method can be used to make new objects which
+      prototype is the object passed as the first parameter.
+    </p>
+    <div class="code-wrapper">
+      <textarea class="code" mode="javascript" runnable="true" theme="neat">
+var car = {wheels: 4};
+var sedan = Object.create(car);
+sedan.color = 'red';
+console.log('sedan.color: ' + sedan.color);
+console.log('sedan.wheels: ' + sedan.wheels);
+console.log('car.color: ' + car.color);
+console.log('car.wheels: ' + car.wheels);
+      </textarea>
+    </div>
+  </section>
+
+  <section class="slide" id="prototypal-3">
+    <h2>Prototypal Inheritance</h2>
+    <p>
+      JavaScript also supports a form of "classical" inheritance through
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#Using_a_constructor_function">constructor functions</a>.
+    </p>
+    <div class="code-wrapper">
+      <textarea class="code" mode="javascript" runnable="true" theme="neat">
+function Car(wheels, color) {
+  this.wheels = wheels;
+  this.color = color;
+}
+
+Car.prototype.printInfo = function() {
+  console.log('wheels: ' + this.wheels + ', color: ' + this.color);
+};
+
+var car = new Car(4, 'red');
+car.printInfo();
+console.log(Object.getPrototypeOf(car) === Car.prototype);
+console.log(Object.getPrototypeOf(car).constructor);
+      </textarea>
+    </div>
+  </section>
+
+  <section class="slide" id="module-1">
+    <h2>The Module Pattern</h2>
+    <ul>
+      <li class="slide">Modules provide a clean way to separate large applications into smaller pieces that interact between them.</li>
+      <li class="slide">They allow us to encapsulate data and functionalities (like private and public properties and methods in "classical" object-oriented language).</li>
+      <li class="slide">You can read more about it <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">here</a>.</li>
+    </ul>
+  </section>
+
+  <section class="slide" id="module-2">
+    <h2>The Module Pattern</h2>
+    <div class="code-wrapper">
+      <label>Example taken from <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">here</a>:</label>
+      <textarea class="code" mode="javascript" runnable="true" theme="neat">
+var testModule = (function () {
+  var counter = 0;
+
+  return {
+    incrementCounter: function () {
+      return counter++;
+    },
+    resetCounter: function () {
+      console.log( "counter value prior to reset: " + counter );
+      counter = 0;
+    }
+  };
+})();
+
+testModule.incrementCounter();
+testModule.resetCounter();
+
+testModule.incrementCounter();
+testModule.incrementCounter();
+testModule.resetCounter();
+      </textarea>
+    </div>
+  </section>
+
+  <section class="slide" id="tools">
+    <h2>Some Libraries &amp; Tools</h2>
+    <ul>
+      <li class="slide">DOM + Ajax (<a href="http://jquery.com/">jQuery</a>)</li>
+      <li class="slide">Utilities (<a href="http://lodash.com/">Lo-Dash</a>)</li>
+      <li class="slide">Module loading (<a href="http://requirejs.org/">RequireJS</a>)</li>
+      <li class="slide">Minifiers (<a href="https://github.com/mishoo/UglifyJS">UglifyJS</a>)</li>
+      <li class="slide">Transpilers (<a href="http://coffeescript.org/">CoffeeScript</a>)</li>
+      <li class="slide">Testing (<a href="http://visionmedia.github.io/mocha/">Mocha</a> + <a href="http://chaijs.com/">Chai.js</a>)</li>
+      <li class="slide">Linting (<a href="http://www.jshint.com/">JSHint</a>)</li>
+      <li class="slide">Code analysis (<a href="https://github.com/jsoverson/plato">plato</a>)</li>
+      <li class="slide">Development workflow (<a href="http://yeoman.io/">Yeoman</a> + <a href="http://gruntjs.com/">Grunt</a> + <a href="http://bower.io/">Bower</a>)</li>
+      <li class="slide">This presentation was made with <a href="http://imakewebthings.com/deck.js/">Deck.js</a> with the <a href="https://github.com/iros/deck.js-codemirror">Codemirror plugin</a> for code samples.</li>
+    </ul>
+  </section>
+
+  <section class="slide" id="thanks">
+    <h1>Thanks!</h1>
+  </section>
+
+  <!-- deck.navigation snippet -->
+  <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+  <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+  <!-- deck.goto snippet -->
+  <form action="." method="get" class="goto-form">
+  <label for="goto-slide">Go to slide:</label>
+  <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+  <datalist id="goto-datalist"></datalist>
+  <input type="submit" value="Go">
+  </form>
+
+  <!-- deck.hash snippet -->
+  <a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+  <!--[if lt IE 7]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+    var _gaq=[['_setAccount','UA-10144665-7'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src='//www.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+
+  <script data-main="scripts/de18fc99.main" src="bower_components/requirejs/require.js"></script>
+</body>
+</html>
