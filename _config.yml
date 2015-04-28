@@ -10,7 +10,6 @@ title:            Jonathan Reyes
 tagline:          Software Developer
 description:      I am a Software Developer from Quito, Ecuador working for <a href="https://www.thoughtworks.com/">ThoughtWorks</a>
 url:              https://jreyes.org
-enforce_ssl:      jreyes.org
 baseurl:          /
 paginate:         5
 
