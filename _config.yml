@@ -1,9 +1,9 @@
 # Dependencies
-markdown:         kramdown
-highlighter:      rouge
+markdown:         redcarpet
+highlighter:      pygments
 
 # Permalinks
-permalink:        pretty
+permalink:        /blog/:title/
 
 # Setup
 title:            Jonathan Reyes
