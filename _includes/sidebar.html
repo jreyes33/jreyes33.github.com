@@ -9,7 +9,7 @@
   </div>
 
   <nav class="sidebar-nav">
-    <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="/">Home</a>
+    <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="/">Inicio</a>
 
     {% comment %}
       The code below dynamically generates a sidebar nav of pages with
@@ -27,7 +27,7 @@
   </nav>
 
   <div class="sidebar-item">
-    <p>Find me on:</p>
+    <p>Encuéntrame en:</p>
   </div>
   <nav class="sidebar-nav">
     <a class="sidebar-nav-item" href="{{ site.links.github }}"><i class="fa fa-github"></i> GitHub</a>
@@ -37,7 +37,8 @@
 
   <div class="sidebar-item">
     <p>
-      <i class="fa fa-smile-o"></i> {{ site.time | date: '%Y' }}. All content released under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA License</a>
+      <i class="fa fa-creative-commons"></i> {{ site.time | date: '%Y' }} | Todo el contenido de este sitio es liberado con una
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">licencia CC BY-SA</a>
     </p>
   </div>
 </div>

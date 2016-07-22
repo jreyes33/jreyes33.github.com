@@ -7,8 +7,8 @@ permalink:        /blog/:title/
 
 # Setup
 title:            Jonathan Reyes
-tagline:          Software Developer
-description:      I am a Software Developer from Quito, Ecuador working for <a href="https://www.thoughtworks.com/">ThoughtWorks</a>
+tagline:          desarrollador de software
+description:      ¡Hola! Soy un desarrollador de software de Quito, Ecuador. Trabajo actualmente en <a href="https://www.thoughtworks.com/es/">ThoughtWorks</a>.
 url:              https://jreyes.org
 baseurl:          /
 paginate:         5

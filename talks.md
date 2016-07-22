@@ -1,10 +1,10 @@
 ---
 layout: page
 permalink: /talks/
-title: Talks
+title: Charlas
 ---
 
-These are some of the talks I've given, both in Spanish and in English:
+Estas son algunas de las charlas que he presentado tanto en español como en inglés:
 
 * [ECMAScript 2015 - ES6](/es2015)
 * [Rediscover JavaScript](rediscover-js)
