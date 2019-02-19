@@ -1,6 +1,7 @@
 # Dependencies
-markdown:         redcarpet
-highlighter:      pygments
+markdown:         kramdown
+highlighter:      rouge
+plugins:          ["jekyll-paginate"]
 
 # Permalinks
 permalink:        /blog/:title/
@@ -8,7 +9,8 @@ permalink:        /blog/:title/
 # Setup
 title:            Jonathan Reyes
 tagline:          desarrollador de software
-description:      ¡Hola! Soy un desarrollador de software de Quito, Ecuador. Trabajo actualmente en <a href="https://www.thoughtworks.com/es/">ThoughtWorks</a>.
+description:      ¡Hola! Soy un desarrollador de software de Quito, Ecuador.
+host:             0.0.0.0
 url:              https://jreyes.org
 baseurl:          /
 paginate:         5
@@ -16,6 +18,10 @@ paginate:         5
 author:
   name:           Jonathan Reyes
   url:            https://jreyes.org
+
+sass:
+  sass_dir: _sass
+  style: compressed
 
 # Custom vars
 version:          0.0.1
