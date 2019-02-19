@@ -7,6 +7,5 @@
 Run locally with:
 
 ```sh
-bundle
-bundle exec jekyll serve
+docker-compose up
 ```
