@@ -1,2 +1,6 @@
 _gh_pages
 _site
+.git
+.gitignore
+.dockerignore
+.sass-cache
